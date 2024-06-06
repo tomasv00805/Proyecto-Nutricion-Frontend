@@ -6,12 +6,12 @@
 }
 .container-form {
   border: 2px solid #000000; /* Borde del recuadro */
-  border-radius: 10px;    /* Bordes redondeados */
-  padding: 50px;          /* Espacio interno */
-  max-width: 1000px;       /* Ancho máximo del contenedor */
-  margin: 20px auto;      /* Centrar el contenedor horizontalmente y añadir margen superior */
+  border-radius: 10px;    /* Bordes redondeados */          /* Espacio interno */      /* Ancho máximo del contenedor */     /* Centrar el contenedor horizontalmente y añadir margen superior */
   text-align: left;
   background-color: #f7e7e7; /* Color de fondo opcional */
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
 }
 
 .Titulo-Formulario{
@@ -57,7 +57,9 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  gap: 5px;
+  flex-wrap: nowrap;
+  gap: auto;
+
 }
 .Titulo-descripcion{
   font-size: 18px;
@@ -89,7 +91,36 @@
   border-radius: 10px;    /* Bordes redondeados */
   padding: 20px;          /* Espacio interno */
   background-color: #f7dddd; /* Color de fondo opcional */
+ 
+ 
+}
+@media (max-width: 768px) {
+  .Titulo-Formulario {
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  .container-barra,
+  .container-gusto {
+    padding: 15px;
+  }
+
+  .Titulo-Sabor,
+  .Titulo-descripcion {
+    font-size: 16px;
+  }
+
+  .gusto-check {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .boton{
+    margin-top: 20px;
+  }
+
+
 }
 
-
-
+.bpdyyy{
+  width: 40vw;
+}
