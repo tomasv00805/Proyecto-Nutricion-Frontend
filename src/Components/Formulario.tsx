@@ -44,7 +44,7 @@ function Formulario() {
   };
 
   type FormValues = {
-    gusto_general: string;
+    gusto_general: string; // Ensure this matches your usage in the form
     sabor: number;
     aroma: number;
     textura: number;
@@ -55,13 +55,13 @@ function Formulario() {
   };
 
   const handleRadioChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { id } = e.target;
-    setValue("gusto_general", id, e.target.value);
+    const { value } = e.target;
+    setValue("gusto_general", value, { shouldValidate: true }); // Include options as needed
   };
 
   return (
     <div className="container-form container-fluid">
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit as any)}>
         <div
           className="contenedor-titulo"
           style={{ backgroundImage: `url(${fondo1})` }}
