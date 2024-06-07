@@ -1,0 +1,50 @@
+.container-home{
+    border: 2px solid #000000;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-titulo-home{
+margin-top: 20px;
+  border: 2px solid #000000; /* Borde del recuadro */
+  border-radius: 10px;    /* Bordes redondeados */
+  padding: 20px;          /* Espacio interno */
+  background-color: #ffffff; /* Color de fondo opcional */
+}
+.container-card{
+    margin-top: 20px;
+    border: 2px solid #000000; /* Borde del recuadro */
+    border-radius: 10px;    /* Bordes redondeados */
+    padding: 20px;          /* Espacio interno */
+    background-color: #ffffff; /* Color de fondo opcional */
+}
+.container-cant-respuestas{
+    margin-top: 20px;
+    border: 2px solid #000000; /* Borde del recuadro */
+    border-radius: 10px;    /* Bordes redondeados */
+    padding: 20px;          /* Espacio interno */
+    background-color: #ffffff; /* Color de fondo opcional */
+
+}
+.container-radar-chart{
+    margin-top: 20px;
+    border: 2px solid #000000; /* Borde del recuadro */
+    border-radius: 10px;    /* Bordes redondeados */
+    padding: 20px;          /* Espacio interno */
+    background-color: #ffffff; /* Color de fondo opcional */
+
+}
+.bpdyyy{
+    width: 50vw;
+  }
+.container-boton{
+    margin-top: 20px;
+
+}

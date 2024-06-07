@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home.tsx';
 import MandeForm from './Pages/MandeForm.tsx';
 
-
 function App() {
   return (
     <div className="App">

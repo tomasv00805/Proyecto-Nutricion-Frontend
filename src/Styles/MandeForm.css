@@ -1,0 +1,55 @@
+/* Estilos generales */
+.container-form-enviado {
+    border: 2px solid #000000; /* Borde del recuadro */
+    border-radius: 10px;    /* Bordes redondeados */          /* Espacio interno */      /* Ancho máximo del contenedor */     /* Centrar el contenedor horizontalmente y añadir margen superior */
+    text-align: center;
+    background-color: #f7e7e7; /* Color de fondo opcional */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container-logo {
+    width: 50%; /* Usa un porcentaje para que sea responsive */
+    max-width: 20%; /* Tamaño máximo para pantallas grandes */
+    height: 40%; /* Altura fija para el recuadro */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0 auto; /* Centrar el logo horizontalmente */
+    border-radius: 50%;
+    border: 2px solid #000; /* Borde del recuadro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el recuadro */
+    margin-bottom: 20px; /* Espacio entre el logo y el texto */
+  }
+  
+  .titulo-form {
+    font-size: 2em; /* Ajusta el tamaño del texto */
+  }
+  
+  /* Media queries para diferentes tamaños de pantalla */
+  @media (max-width: 768px) {
+    .titulo-form {
+      font-size: 1.5em; /* Reducir tamaño del texto en pantallas medianas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .titulo-form {
+      font-size: 1.2em; /* Reducir tamaño del texto en pantallas pequeñas */
+    }
+  
+    .container-logo {
+        width: 56%; /* Usa un porcentaje para que sea responsive */
+        max-width: 40%; /* Tamaño máximo para pantallas grandes */
+        height: 20%; /* Altura fija para el recuadro */
+    }
+  }
+  
+
+  
