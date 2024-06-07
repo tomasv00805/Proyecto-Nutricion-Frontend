@@ -40,7 +40,7 @@ export const RadarChart: React.FC = () => {
 
     useEffect(() => {
         console.log('entro al use');
-        fetch('https://d95a-181-15-119-74.ngrok-free.app/api/all')
+        fetch('https://backtryv5.onrender.com/api/responses/all')
         .then(response => {
             if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);

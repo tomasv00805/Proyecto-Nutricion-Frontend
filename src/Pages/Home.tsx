@@ -1,15 +1,23 @@
-import data from '../Logic/rptas.json';
 import Button from 'react-bootstrap/Button'; 
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
-import RadarChart from '../Components/RadarChart';
+import {RadarChart} from '../Components/Radar';
 import "../Styles/Home.css";
+import { useEffect, useState } from 'react';
+import { fetchResponses } from '../Logic/data';
 
 function Home() {
 
-  const respuestas = data.responses;
+const [respuestas, setRespuestas] = useState<Response[]>([]);
 
-  
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchResponses();
+      setRespuestas(data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
       <div className=" container-home container-fluic">

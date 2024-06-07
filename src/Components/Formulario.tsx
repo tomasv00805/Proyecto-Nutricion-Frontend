@@ -22,7 +22,7 @@ function Formulario() {
     }
     
     try {
-      const response = await fetch(process.env.REACT_APP_BACKEND_URL + '/api/responses', {
+      const response = await fetch('https://backtryv5.onrender.com/api/responses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
