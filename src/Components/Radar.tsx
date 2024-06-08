@@ -112,13 +112,33 @@ export const RadarChart: React.FC = () => {
         }
     };
 
+//for each data attribute, return a p with the attribute name and the value
+
+
     return (
-        <div className='radar-container'>
-            <h4 className='radar-title'>Gráfico de Araña</h4>
-            <div className="radar-graphic">
-            {data ? <Radar data={radarData} options={radarOptions} /> : <p>Cargando datos...</p>}
+        <div className="info-radar">
+            <div className='radar-container'>
+                <h4 className='radar-title'>Gráfico de Araña</h4>
+                <div className="radar-graphic">
+                {data ? <Radar data={radarData} options={radarOptions} /> : <p>Cargando datos...</p>}
+                </div>
             </div>
+        {data ? 
+            <div className="averages-info">
+                <div className="promedios"><h3>Promedios</h3></div>
+                <div className="attribute-info">    
+                    <p className="attribute-card">ℹ️ Sabor: <span id='sabor-average'>{data.sabor.toFixed(2)}</span></p>
+                    <p className='attribute-card'>ℹ️ Aroma: <span id='aroma-average'>{data.aroma.toFixed(2)}</span></p>
+                    <p className='attribute-card'>ℹ️ Textura: <span id='textura-average'>{data.textura.toFixed(2)}</span></p>
+                    <p className='attribute-card'>ℹ️ Crocante: <span id='crocante-average'>{data.crocante.toFixed(2)}</span></p>
+                    <p className='attribute-card'>ℹ️ Forma: <span id='forma-average'>{data.forma.toFixed(2)}</span></p>
+                    <p className='attribute-card'>ℹ️ Color: <span id='color-average'>{data.color.toFixed(2)}</span></p>
+                    <p className='attribute-card'>ℹ️ Tamaño: <span id='tamano-average'>{data.tamaño.toFixed(2)}</span></p>
+                </div>
+            </div>
+    : ""}
         </div>
+        
     );
 };
 

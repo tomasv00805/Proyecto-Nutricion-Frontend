@@ -36,7 +36,6 @@ function Formulario() {
 
       const result = await response.json();
       console.log('Server response:', result);
-      window.location.href = '/form/enviado';
     } catch (error) {
       console.error('Error sending data:', error);
       alert('HUBO UN ERROR BRO PERDON');
@@ -137,7 +136,7 @@ function Formulario() {
         </div>
 
         <div className="boton">
-          <Button variant="outline-success" type="submit"> Enviar </Button>{' '}
+          <Button variant="outline-success" type="submit">Enviar</Button>{' '}
         </div>
       </Form>
     </div>

@@ -6,7 +6,7 @@ body{
     position: absolute;
     top: 90px;
     width: 100vw;
-    height: 73vh!important;
+    height: calc(100vh - 172px);
     overflow: scroll;
     overflow-x: hidden;
 }
