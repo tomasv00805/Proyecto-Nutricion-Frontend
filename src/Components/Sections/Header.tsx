@@ -1,5 +1,6 @@
 import "../../Styles/Components/Header.css";
 import React from "react";
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
     isAgent: boolean;
@@ -8,10 +9,6 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ isAgent, titlePage }) => {
     
-    function toCrearRpta(){
-        window.location.href = '/form';
-    }
-
     return (
         <>
             <header>
@@ -23,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ isAgent, titlePage }) => {
                     </div>
                 </div>
                 {isAgent ? 
-                <div onClick={toCrearRpta} className="create-response" id="create-response-button"><img src="/Img/icons/plus-solid.svg" alt="Plus" className="plus-icon"/><span className="cr-text">CREAR RESPUESTA</span></div>
+                <div className="create-response" id="create-response-button"><Link to="/form" style={{ color: 'inherit', textDecoration: 'none' }}><img src="/Img/icons/plus-solid.svg" alt="Plus" className="plus-icon"/><span className="cr-text">CREAR RESPUESTA</span></Link></div>
                 : ""}
             </header>
         </>
