@@ -5,11 +5,17 @@ import fondo1 from "/Img/Black and White Monthly News Email Header.png";
 import RadioPregunta from "./RadioPregunta";
 import Button from 'react-bootstrap/Button';
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useState } from "react";
+import ModalCharging from "./ModalCharging";
+import ModalThanks from "./ModalThankyou";
 
 function Formulario() {
   const { register, handleSubmit, setValue } = useForm();
 
+  const [isRespondido, setIsRespondido] = useState(0);
+
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
+    setIsRespondido(1);
     for (const key in data) {
       if (data.hasOwnProperty(key)) {
         const value = data[key];
@@ -36,9 +42,11 @@ function Formulario() {
 
       const result = await response.json();
       console.log('Server response:', result);
+      setIsRespondido(2);
+
     } catch (error) {
       console.error('Error sending data:', error);
-      alert('HUBO UN ERROR BRO PERDON');
+      alert('Hubo un error al procesar tu solicitud. Recargá la página y probá de nuevo.');
     }
   };
 
@@ -60,6 +68,8 @@ function Formulario() {
 
   return (
     <div className="container-form container-fluid">
+      {isRespondido == 1 ? <ModalCharging /> : isRespondido == 2 ? <ModalThanks /> : ""}
+      
       <Form onSubmit={handleSubmit(onSubmit as any)}>
         <div
           className="contenedor-titulo"

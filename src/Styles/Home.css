@@ -9,4 +9,5 @@ body{
     height: calc(100vh - 172px);
     overflow: scroll;
     overflow-x: hidden;
+    margin-bottom: 20px;
 }
