@@ -10,6 +10,7 @@ import {
     Legend
 } from 'chart.js';
 import "../Styles/Components/Radar.css"
+import { fetchResponses } from '../Logic/data';
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
@@ -35,20 +36,13 @@ interface Averages {
     tamaño: number;
 }
 
-
 export const RadarChart: React.FC = () => {
     const [data, setData] = useState<Averages | null>(null);
 
     useEffect(() => {
         console.log('entro al use');
-        fetch('https://backtryv5.onrender.com/api/responses/all')
-        .then(response => {
-            if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then((data: ResponseData[]) => {
+        fetchResponses()
+        .then((data: any) => {
             const averages = calculateAverages(data);
             console.log('Averages:', averages);
             setData(averages);
@@ -57,7 +51,7 @@ export const RadarChart: React.FC = () => {
             console.error('Error fetching data:', error);
             // Puedes agregar un manejo adicional de errores aquí, como mostrar un mensaje de error al usuario
         });
-        }, []);
+    }, []);
 
     const calculateAverages = (responses: ResponseData[]): Averages => {
         const totals = responses.reduce((acc, response) => {
@@ -99,10 +93,17 @@ export const RadarChart: React.FC = () => {
     const radarOptions = {
         scales: {
             r: {
+                grid: { display: true, color: '#ccc' },
+                min: 0,
+                max: 10,
+                
                 beginAtZero: true,
                 ticks: {
-                    display: false // Ocultar valores numéricos
-                },
+                    stepSize: 1,
+                    display: true, // Ocultar valores numéricos.
+                    font: { size: 7, family: 'Raleway', style: 'normal', weight: null, color: 'blue' },
+                    showLabelBackdrop: false
+                    },
                 pointLabels: {
                     font: {
                         size: 14 // Ajustar el tamaño de la fuente si es necesario
@@ -112,33 +113,28 @@ export const RadarChart: React.FC = () => {
         }
     };
 
-//for each data attribute, return a p with the attribute name and the value
-
-
     return (
         <div className="info-radar">
             <div className='radar-container'>
                 <h4 className='radar-title'>Gráfico de Araña</h4>
                 <div className="radar-graphic">
-                {data ? <Radar data={radarData} options={radarOptions} /> : <p>Cargando datos...</p>}
+                    {data ? <Radar data={radarData} options={radarOptions as any} /> : <p>Cargando datos...</p>}
                 </div>
             </div>
-        {data ? 
-            <div className="averages-info">
-                <div className="promedios"><h3>Promedios</h3></div>
-                <div className="attribute-info">    
-                    <p className="attribute-card">ℹ️ Sabor: <span id='sabor-average'>{data.sabor.toFixed(2)}</span></p>
-                    <p className='attribute-card'>ℹ️ Aroma: <span id='aroma-average'>{data.aroma.toFixed(2)}</span></p>
-                    <p className='attribute-card'>ℹ️ Textura: <span id='textura-average'>{data.textura.toFixed(2)}</span></p>
-                    <p className='attribute-card'>ℹ️ Crocante: <span id='crocante-average'>{data.crocante.toFixed(2)}</span></p>
-                    <p className='attribute-card'>ℹ️ Forma: <span id='forma-average'>{data.forma.toFixed(2)}</span></p>
-                    <p className='attribute-card'>ℹ️ Color: <span id='color-average'>{data.color.toFixed(2)}</span></p>
-                    <p className='attribute-card'>ℹ️ Tamaño: <span id='tamano-average'>{data.tamaño.toFixed(2)}</span></p>
+            {data ? 
+                <div className="averages-info">
+                    <div className="promedios"><h3>Promedios</h3></div>
+                    <div className="attribute-info">    
+                        <p className="attribute-card">ℹ️ Sabor: <span id='sabor-average'>{data.sabor.toFixed(2)}</span></p>
+                        <p className='attribute-card'>ℹ️ Aroma: <span id='aroma-average'>{data.aroma.toFixed(2)}</span></p>
+                        <p className='attribute-card'>ℹ️ Textura: <span id='textura-average'>{data.textura.toFixed(2)}</span></p>
+                        <p className='attribute-card'>ℹ️ Crocante: <span id='crocante-average'>{data.crocante.toFixed(2)}</span></p>
+                        <p className='attribute-card'>ℹ️ Forma: <span id='forma-average'>{data.forma.toFixed(2)}</span></p>
+                        <p className='attribute-card'>ℹ️ Color: <span id='color-average'>{data.color.toFixed(2)}</span></p>
+                        <p className='attribute-card'>ℹ️ Tamaño: <span id='tamano-average'>{data.tamaño.toFixed(2)}</span></p>
+                    </div>
                 </div>
-            </div>
-    : ""}
+            : ""}
         </div>
-        
     );
 };
-
