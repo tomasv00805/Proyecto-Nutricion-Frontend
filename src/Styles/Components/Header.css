@@ -1,0 +1,75 @@
+header{
+    width: 100vw;
+    height: 83px;
+    display: flex;
+    font-family: 'Raleway', sans-serif;
+    position: absolute;
+    top: 0px;
+    padding: 20px 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.144);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-pageTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.text-area{
+    margin-top: 10px;
+    display: flex;
+    flex-flow: column;
+}
+
+.logo-pageTitle h1{
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: bolder;
+}
+
+.logo-pageTitle h2{
+    margin-top: -5px;
+    font-size: 10px;
+    font-weight: lighter;
+    line-height: 10px;
+ }
+ 
+
+.logo-pageTitle img{
+    width: 45px;
+    height: 62px;
+}
+
+.create-response{
+    padding: 10px;
+    background-color: #1E0F03!important;
+    color: #F0D5DD;
+    display: flex;
+    gap: 5px;
+    font-weight: bolder;
+    border-radius: 100px;
+    align-items: center;
+}
+
+.cr-text{
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.plus-icon{
+    width: 18px;
+}
+
+.create-response:hover{
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+@media (max-width: 740px) {
+    .cr-text{
+        display: none;
+    }
+}

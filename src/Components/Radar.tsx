@@ -9,6 +9,7 @@ import {
     Tooltip,
     Legend
 } from 'chart.js';
+import "../Styles/Components/Radar.css"
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
@@ -88,8 +89,8 @@ export const RadarChart: React.FC = () => {
             {
                 label: 'Promedio',
                 data: data ? [data.sabor, data.aroma, data.textura, data.crocante, data.forma, data.color, data.tamaño] : [],
-                backgroundColor: 'rgba(34, 202, 236, 0.2)',
-                borderColor: 'rgba(34, 202, 236, 1)',
+                backgroundColor: 'rgba(254, 101, 145, 0.2)',
+                borderColor: 'rgba(254, 101, 145, 1)',
                 borderWidth: 1,
             },
         ],
@@ -112,9 +113,11 @@ export const RadarChart: React.FC = () => {
     };
 
     return (
-        <div>
-            <h2>Gráfico de Araña</h2>
+        <div className='radar-container'>
+            <h4 className='radar-title'>Gráfico de Araña</h4>
+            <div className="radar-graphic">
             {data ? <Radar data={radarData} options={radarOptions} /> : <p>Cargando datos...</p>}
+            </div>
         </div>
     );
 };

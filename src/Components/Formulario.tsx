@@ -55,8 +55,8 @@ function Formulario() {
   };
 
   const handleRadioChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setValue("gusto_general", value, { shouldValidate: true }); // Include options as needed
+    const { id } = e.target;
+    setValue("gusto_general", id, e.target.value as any);
   };
 
   return (
