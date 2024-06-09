@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
+    padding: 20px;
 }
 
 .radar-container{
@@ -58,5 +59,8 @@
 
     .attribute-card{
         width: 90vw;
+    }
+    .averages-info{
+        margin-top: 40px;
     }
 }

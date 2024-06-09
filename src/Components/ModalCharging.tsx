@@ -4,7 +4,7 @@ function ModalCharging() {
   return (
     <div className="modal" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: '10' }}>
       <Modal.Dialog>
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>Procesando</Modal.Title>
         </Modal.Header>
         <Modal.Body>

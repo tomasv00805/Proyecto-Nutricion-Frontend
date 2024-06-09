@@ -8,7 +8,6 @@ import { useState } from "react";
 import ModalCharging from "./ModalCharging";
 import ModalThanks from "./ModalThankyou";
 import Header from "../Components/Sections/Header";
-import { useNavigate } from 'react-router-dom';
 
 function Formulario() {
   const { register, handleSubmit, setValue } = useForm();
@@ -27,7 +26,7 @@ function Formulario() {
         }
       }
     }
-    
+  
     try {
       const response = await fetch('https://backtryv5.onrender.com/api/responses', {
         method: 'POST',
@@ -36,20 +35,18 @@ function Formulario() {
         },
         body: JSON.stringify(data),
       });
-
+  
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-
+  
       const result = await response.json();
       console.log('Server response:', result);
       setIsRespondido(2);
-
     } catch (error) {
       console.error('Error sending data:', error);
-      await alert('Hubo un error al procesar tu solicitud. Probá de nuevo.');
-      const navigate = useNavigate();
-      navigate(window.location.pathname);
+      setIsRespondido(0);
+      alert('Error sending data. Please try again.'); // Show an alert to the user
     }
   };
 
