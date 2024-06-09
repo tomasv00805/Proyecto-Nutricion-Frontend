@@ -5,13 +5,12 @@
   text-align: left;
 }
 .container-form {
-  border: 2px solid #000000; /* Borde del recuadro */
   border-radius: 10px;    /* Bordes redondeados */          /* Espacio interno */      /* Ancho máximo del contenedor */     /* Centrar el contenedor horizontalmente y añadir margen superior */
   text-align: left;
-  background-color: #f7e7e7; /* Color de fondo opcional */
   max-width: 100%;
   margin: auto;
   padding: 20px;
+  margin-top: 85px;
   
 }
 
@@ -24,11 +23,6 @@
   padding: 30px; 
 }
 
-.contenedor{
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
 .Titulo-Sabor{
   font-size: 18px;
   font-weight: bold;
@@ -38,20 +32,22 @@
 }
 
 .container-barra{
-  border: 2px solid #000000; /* Borde del recuadro */
   border-radius: 10px;    /* Bordes redondeados */
   padding: 25px;          /* Espacio interno */
-  background-color: #f7dddd; /* Color de fondo opcional */
+  background-color: #FFDEE8; /* Color de fondo opcional */
   text-align: center;
   margin-top: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.144);
+
 }
 
 .container-gusto{
   margin-top: 20px;
-  border: 2px solid #000000; /* Borde del recuadro */
   border-radius: 10px;    /* Bordes redondeados */
   padding: 20px;          /* Espacio interno */
-  background-color: #f7dddd; /* Color de fondo opcional */
+  background-color: #FFDEE8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.144);
+
 }
 
 .gusto-check{
@@ -118,7 +114,10 @@
   .boton{
     margin-top: 20px;
   }
-
+  .radio-pregunta {
+    position: relative; /* or whatever is appropriate */
+    z-index: 1; /* A lower value than the header */
+  }
 
 }
 

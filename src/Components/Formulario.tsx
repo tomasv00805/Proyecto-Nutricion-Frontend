@@ -1,13 +1,13 @@
 import Form from "react-bootstrap/Form";
 import "../Styles/App.css";
 import { ChangeEvent } from "react";
-import fondo1 from "/Img/Black and White Monthly News Email Header.png";
 import RadioPregunta from "./RadioPregunta";
 import Button from 'react-bootstrap/Button';
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useState } from "react";
 import ModalCharging from "./ModalCharging";
 import ModalThanks from "./ModalThankyou";
+import Header from "../Components/Sections/Header";
 
 function Formulario() {
   const { register, handleSubmit, setValue } = useForm();
@@ -46,7 +46,8 @@ function Formulario() {
 
     } catch (error) {
       console.error('Error sending data:', error);
-      alert('Hubo un error al procesar tu solicitud. Recargá la página y probá de nuevo.');
+      await alert('Hubo un error al procesar tu solicitud. Probá de nuevo.');
+      window.location.reload();
     }
   };
 
@@ -65,22 +66,18 @@ function Formulario() {
     const { id } = e.target;
     setValue("gusto_general", id, e.target.value as any);
   };
-
+ 
   return (
-    <div className="container-form container-fluid">
+    <>
+   <Header isAgent={false} titlePage="FORMULARIO DE RESPUESTAS"/>
+    <div className="container-form container-fluid" >
+    
       {isRespondido == 1 ? <ModalCharging /> : isRespondido == 2 ? <ModalThanks /> : ""}
       
       <Form onSubmit={handleSubmit(onSubmit as any)}>
-        <div
-          className="contenedor-titulo"
-          style={{ backgroundImage: `url(${fondo1})` }}
-        >
-          <div className="Titulo-Formulario">
-            <h1>FORMULARIO GALLETA 1</h1>
-          </div>
-        </div>
-
+      <div className="radio-pregunta">
         <RadioPregunta onRadioChange={handleRadioChange} />
+        </div>
 
         <div className="container-barra">
           <Form.Label className="Titulo-descripcion">Sabor</Form.Label>
@@ -146,10 +143,12 @@ function Formulario() {
         </div>
 
         <div className="boton">
-          <Button variant="outline-success" type="submit">Enviar</Button>{' '}
-        </div>
+        <Button variant="outline-success" type="submit" style={{marginTop:'20px'}} className="w-100 d-block d-md-inline">
+  Enviar
+</Button>{' '}        </div>
       </Form>
     </div>
+    </>
   );
 }
 
