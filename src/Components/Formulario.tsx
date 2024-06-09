@@ -8,7 +8,7 @@ import { useState } from "react";
 import ModalCharging from "./ModalCharging";
 import ModalThanks from "./ModalThankyou";
 import Header from "../Components/Sections/Header";
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Formulario() {
   const { register, handleSubmit, setValue } = useForm();
