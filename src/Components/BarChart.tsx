@@ -69,22 +69,24 @@ export const BarChart: React.FC = () => {
     } : {};
 
     const barOptions = {
+        indexAxis: 'y', // Cambia el eje a horizontal
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-            x: {
+            x: { 
+                beginAtZero: true,
                 ticks: {
+                    stepSize: 1,
                     font: {
-                        size: 14,
+                        size: 10,
                     },
                     color: '#333',
                 }
             },
-            y: {
-                beginAtZero: true,
+            y: { 
                 ticks: {
                     font: {
-                        size: 14,
+                        size: 10,
                     },
                     color: '#333',
                 }
@@ -106,7 +108,7 @@ export const BarChart: React.FC = () => {
             <div className='bar-container'>
                 <h4 className='bar-title'>Distribución de Gusto General</h4>
                 <div className="bar-graphic">
-                    {gustoGeneralCounts ? <Bar data={barData as any} options={barOptions} /> : <p>Cargando datos...</p>}
+                    {gustoGeneralCounts ? <Bar data={barData as any} options={barOptions as any} /> : <p>Cargando datos...</p>}
                 </div>
             </div>
             {gustoGeneralCounts && (

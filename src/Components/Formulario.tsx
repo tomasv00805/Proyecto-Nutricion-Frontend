@@ -46,12 +46,12 @@ function Formulario() {
     } catch (error) {
       console.error('Error sending data:', error);
       setIsRespondido(0);
-      alert('Error sending data. Please try again.'); // Show an alert to the user
+      alert('Error al enviar los datos. Completar TODOS los campos!');
     }
   };
 
   type FormValues = {
-    gusto_general: string; // Ensure this matches your usage in the form
+    gusto_general: string;
     sabor: number;
     aroma: number;
     textura: number;
