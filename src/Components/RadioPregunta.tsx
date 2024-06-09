@@ -19,7 +19,7 @@ function RadioPregunta({ onRadioChange }: { onRadioChange: (e: ChangeEvent<HTMLI
             type="radio"
             label="No me gusta nada"
             name="sabor"
-            id="no me gusta nada"
+            id="No me gusta nada"
             onChange={onRadioChange}
          
             
@@ -29,7 +29,7 @@ function RadioPregunta({ onRadioChange }: { onRadioChange: (e: ChangeEvent<HTMLI
             type="radio"
             label="No me gusta"
             name="sabor"
-            id="no me gusta"
+            id="No me gusta"
             onChange={onRadioChange}
          
           />
