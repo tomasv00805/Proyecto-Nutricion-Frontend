@@ -8,6 +8,7 @@ import { useState } from "react";
 import ModalCharging from "./ModalCharging";
 import ModalThanks from "./ModalThankyou";
 import Header from "../Components/Sections/Header";
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Formulario() {
   const { register, handleSubmit, setValue } = useForm();
@@ -47,7 +48,8 @@ function Formulario() {
     } catch (error) {
       console.error('Error sending data:', error);
       await alert('Hubo un error al procesar tu solicitud. Probá de nuevo.');
-      window.location.reload();
+      const navigate = useNavigate();
+      navigate(window.location.pathname);
     }
   };
 
