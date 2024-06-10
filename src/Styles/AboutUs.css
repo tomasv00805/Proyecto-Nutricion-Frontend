@@ -1,0 +1,47 @@
+header{
+    box-shadow: none!important;
+}
+
+.body-aboutUs{
+    margin-top: 100px;
+    background-color: white;
+    height: calc(100vh - 82px);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.image-container{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    background: linear-gradient(to bottom, #FFDEE8  40%, white 60%);
+}
+
+.image-container img{
+    width: 50vw;
+}
+
+.image-container h1{
+    font-weight: bolder;
+}
+
+.text-container{
+    width: 45vw;
+    text-align: justify;
+    margin: auto;
+    margin-top: 30px;
+    font-family: 'Raleway', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .image-container img{
+        width: 90vw;
+    }
+    .text-container{
+        width: 85vw;
+    }
+  }
+
