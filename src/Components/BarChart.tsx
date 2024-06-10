@@ -117,7 +117,7 @@ export const BarChart: React.FC = () => {
                     <div className='attribute-info'>
                         {Object.entries(gustoGeneralCounts).map(([key, value]) => (
                             <p className="attribute-card" key={key}>
-                                {key}: {value}
+                                ℹ️ {key}: {value}
                             </p>
                         ))}
                     </div>

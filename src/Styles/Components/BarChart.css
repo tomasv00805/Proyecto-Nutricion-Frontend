@@ -41,9 +41,4 @@
         padding-bottom: 30%;
         /* Adjust as needed for mobile */
     }
-
-    .attribute-card {
-        flex: 1 1 100%;
-    }
-
 }
