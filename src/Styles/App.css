@@ -1,3 +1,14 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100vw!important;
+  overflow-x: hidden!important;
+}
+
 .Label-Formulario{
   font-size: 18px;
   font-weight: bold;
