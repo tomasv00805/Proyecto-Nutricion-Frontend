@@ -1,8 +1,7 @@
 .body-aboutUs{
     margin-top: 83px;
-    background-color: white;
-    height: calc(100vh - 82px);
     width: 100vw;
+    background-color: white;
 }
 
 .image-container{
@@ -12,7 +11,7 @@
     justify-content: center;
     gap: 10px;
     align-items: center;
-    background: linear-gradient(to bottom, #FFDEE8  40%, white 60%);
+    background: linear-gradient(to bottom, #FFDEE8  48%, white 52%);
 }
 
 .image-container img{
@@ -29,6 +28,7 @@
     margin: auto;
     margin-top: 30px;
     font-family: 'Raleway', sans-serif;
+    background-color: white;
 }
 
 @media (max-width: 768px) {
