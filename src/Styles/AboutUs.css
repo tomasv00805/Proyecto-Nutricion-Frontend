@@ -1,9 +1,9 @@
 .body-aboutUs{
-    margin-top: 100px;
+    margin-top: 83px;
     background-color: white;
     height: calc(100vh - 82px);
     width: 100vw;
-    overflow-x: hidden;
+    overflow-x: hidden!important;
 }
 
 .image-container{
