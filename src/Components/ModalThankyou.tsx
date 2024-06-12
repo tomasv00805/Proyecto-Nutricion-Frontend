@@ -13,7 +13,7 @@ function ModalThanks() {
           <p>Tu respuesta fue guardada satisfactoriamente!</p>
         </Modal.Body>
         <Modal.Footer>
-            <Button variant="primary"><Link to="/aboutUs" style={{ color: 'inherit', textDecoration: 'none' }}><span >Más Sobre Nosotros!</span></Link></Button>
+            <Button variant="primary"><Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}><span >Más Sobre Nosotros!</span></Link></Button>
         </Modal.Footer>
       </Modal.Dialog>
     </div>
